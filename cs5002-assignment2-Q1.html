@@ -1,0 +1,53 @@
+<html>
+   
+<script type="text/javascript">
+
+       var record_women = 10.49
+       var record_men = 9.58
+       var false_start = 0.1
+       var category = "women's" || "men's"
+       var running_time = 0;
+    
+
+       function getValue(){
+
+           var category  = prompt("Enter your category : "); 
+           category = category.toLowerCase();
+           while (category != "women's" && category != "men's") {
+               category.toLocaleLowerCase = prompt(" You didn't enter a valid input. Please enter your category.");
+           }
+           var running_time = prompt("Enter your running time : "); 
+           while (running_time == null || running_time == "" || running_time <0) {
+               running_time = prompt(" You didn't enter a valid input. Please enter your running time with numbers.");
+               
+           }
+           var reaction_time= prompt("Enter your reaction time : ");
+           while (reaction_time == null || reaction_time == "" || reaction_time < 0) {
+               reaction_time = prompt(" You didn't enter a valid input. Please enter your reaction time with numbers.");
+           }
+
+
+           if ( running_time < record_women && category == "women's" && reaction_time >= false_start) {
+                 alert ("You broke the Women's world record.");
+           }
+           else if ( (running_time < record_men) && (category == "men's") && reaction_time >= false_start) {
+                alert ("You broke the Men's world record.");
+            }
+           else {
+             alert ("You could not break the world record."); 
+           }  
+         }
+        
+
+ </script>
+ 
+<body>
+ <p>Click the following button to see your result: </p>
+ 
+ <form>
+    <input type="button" value="Click Me" onclick="getValue() ;" />
+
+ </form>
+ 
+</body>
+</html>

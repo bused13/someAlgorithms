@@ -1,0 +1,27 @@
+<html>
+   
+<script type="text/javascript">
+
+var x, isPangram = true, alphabets = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; 
+function LearnPangram(){ //source from: http://jsfiddle.net/shiyam/9h9td5c4/1/
+		isPangram = true
+		var input = prompt("Please enter a text :");
+    for( x = 0; x < 26; x++ ){
+        if(input.toLowerCase().indexOf(alphabets[x]) == -1){
+            isPangram = false;
+            break;  
+        }
+    }
+    alert(isPangram ? "Pangram" : "Not Pangram" );
+ }
+ </script>
+ 
+<body>
+        <p>
+                Please click to enter your text
+                </p>
+                <input type="button" value="Click here" onClick="LearnPangram()">
+                
+ 
+</body>
+</html>

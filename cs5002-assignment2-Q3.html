@@ -1,0 +1,64 @@
+<html>
+
+<body>
+<script type="text/javascript">
+
+var num = []
+while(num.length < 3){
+    var rm = Math.floor(Math.random()*41) + 1;
+    if(num.indexOf(rm) > -1) continue;
+    num[num.length] = rm;
+}
+
+
+  function getLottoNumbers() {
+
+            var lotto1 = prompt('Please enter three of your lottery numbers between 1 and 40');
+            while (lotto1 == null || lotto1 == "" || lotto1 <1 || lotto1 >40) {
+               lotto1 = prompt(" You didn't enter a valid input. Please enter numbers between 1 and 40.");
+               
+           }
+            var lotto2 = prompt('Please enter three of your lottery numbers between 1 and 40');
+            while (lotto2 == null || lotto2 == "" || lotto2 <1 || lotto2 >40) {
+               lotto2 = prompt(" You didn't enter a valid input. Please enter numbers between 1 and 40.");
+               
+           }
+            var lotto3 = prompt('Please enter three of your lottery numbers between 1 and 40');
+            while (lotto3 == null || lotto3 == "" || lotto3 <1 || lotto3 >40) {
+               lotto3 = prompt(" You didn't enter a valid input. Please enter numbers between 1 and 40.");  
+           }
+            
+            if ( parseInt(lotto1) === num || parseInt(lotto2)=== num || parseInt(lotto3) === num ) {
+            window.alert("Congratulations, you won the 3th prize! The lottery numbers were :" +num);
+             }
+            else if ( ( parseInt(lotto1) === num && parseInt(lotto2) === num) || (parseInt(lotto1) === num && parseInt(lotto3) === num)
+             || (parseInt(lotto3) === num && parseInt(lotto2) === num) ) {
+            window.alert ("Congratulations, you won the 2nd prize! The lottery numbers were :" +num);
+            }
+            else if (parseInt(lotto1) === num && parseInt(lotto2) === num && parseInt(lotto3) === num ) {
+            window.alert("Congratulations, you won the 1st prize! The lottery numbers were :" +num);
+            }
+            else {
+            window.alert("Sorry, you did not win this game. The lottery numbers were : " +num);
+            }
+
+  }   
+
+</script>
+
+
+
+
+ <p>Click the following button to see the lottery results: </p>
+            
+
+            <form>
+        
+            <input type="button" value="Click Me" onclick="getLottoNumbers()">
+            
+            </form>
+            
+         </body>
+
+
+</html>
